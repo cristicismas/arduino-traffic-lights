@@ -3,6 +3,10 @@
 #include "SevSeg.h"
 SevSeg sevseg;
 
+// delay times
+const int LONG_DELAY = 5500;
+const int SHORT_DELAY = 600;
+
 // timer
 millisDelay ledTimer;
 int secondsLeft = 0;
@@ -47,7 +51,7 @@ void light(String lightColor) {
 }
 
 void lightRed() {
-  ledTimer.start(5500);
+  ledTimer.start(LONG_DELAY);
   nextColor = "yellow";
   lastColor = "red";
 
@@ -75,7 +79,7 @@ void lightRed() {
 }
 
 void lightYellow() {
-  ledTimer.start(600);
+  ledTimer.start(SHORT_DELAY);
  
   if (lastColor == "red") {
     nextColor = "green";
@@ -108,7 +112,7 @@ void lightYellow() {
 }
 
 void lightGreen() {
-  ledTimer.start(5500);
+  ledTimer.start(LONG_DELAY);
   nextColor = "yellow";
   lastColor = "green";
   
